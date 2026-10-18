@@ -8,7 +8,7 @@ logging.basicConfig(
     format=log_format,
     datefmt=date_format,
     handlers=[
-        logging.StreamHandler(),
+        #logging.StreamHandler(),
         logging.FileHandler(
             "file_txt.log",
             encoding="utf-8"
@@ -191,15 +191,11 @@ def calculate_triangle(side_a_text, side_b_text, side_c_text):
         ]
 
 
-side_a = input().strip()
-side_b = input().strip()
-side_c = input().strip()
+if __name__ == "__main__":
+    side_a = input().strip()
+    side_b = input().strip()
+    side_c = input().strip()
 
-triangle_type, coordinates = calculate_triangle(
-    side_a,
-    side_b,
-    side_c
-)
-
-print(triangle_type)
-print(coordinates)
+    triangle_type, coordinates = calculate_triangle(side_a, side_b, side_c)
+    print(triangle_type)
+    print(coordinates)
