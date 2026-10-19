@@ -49,6 +49,10 @@ class TypeTriangle(unittest.TestCase):
     def test_infinite_side(self):
         triangle_type, coordinates = calculate_triangle("inf", "5", "5")
         self.assertEqual(triangle_type, "")
+    
+    def test_infinite(self):
+            triangle_type, coordinates = calculate_triangle("0.1", "0.2", "0.3")
+            self.assertEqual(triangle_type, "")
         
 class Coordinates(unittest.TestCase):
     def test_quantity_coordinates(self):
