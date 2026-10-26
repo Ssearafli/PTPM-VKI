@@ -1,6 +1,6 @@
 from controller import Controller
 from database import TriangleDatabase
-from external_interface import MockExternalService
+from external_service import MockExternalService
 from triangle import TriangleCalculator
 from user_interface import ConsoleUserInterface
 
