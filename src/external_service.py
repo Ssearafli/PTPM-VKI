@@ -3,12 +3,15 @@ from abc import ABC, abstractmethod
 
 class ExternalService(ABC):
     @abstractmethod
-    def send(self, message):
+    def send(self, payload: str) -> bool:
         pass
 
 
-class MockExternalService(ExternalService):
-    def send(self, message):
-        # Имитация передачи сторонней зависимости.
-        print(f"[Имитация отправки] {message}")
+class LoggingExternalService(ExternalService):
+
+    def __init__(self):
+        self.sent_messages = []
+
+    def send(self, payload: str) -> bool:
+        self.sent_messages.append(payload)
         return True
